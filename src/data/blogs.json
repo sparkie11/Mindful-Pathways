@@ -1,0 +1,11 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Understanding Physical Therapy Basics",
+      "content": "Physical therapy is a crucial healthcare service that helps patients recover...",
+      "date": "2024-01-15",
+      "author": "Dr. Smith"
+    }
+  ]
+}

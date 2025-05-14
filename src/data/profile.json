@@ -1,0 +1,55 @@
+{
+  "education": [
+    {
+      "degree": "Doctor of Physical Therapy",
+      "institution": "University of Health Sciences",
+      "year": "2018",
+      "description": "Specialized in orthopedic and sports rehabilitation"
+    }
+  ],
+  "accolades": [
+    {
+      "title": "Excellence in Physical Therapy Award",
+      "year": "2020",
+      "issuer": "National Physical Therapy Association"
+    }
+  ],
+  "hobbies": [
+    {
+      "name": "Yoga",
+      "description": "Practicing and teaching yoga for mind-body wellness"
+    },
+    {
+      "name": "Mountain Hiking",
+      "description": "Exploring nature and maintaining physical fitness"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Published Research Paper",
+      "description": "Innovation in Sports Rehabilitation Techniques",
+      "year": "2021"
+    }
+  ],
+  "communities": [
+    {
+      "name": "Physical Therapy Professionals Network",
+      "role": "Active Member",
+      "description": "Contributing to professional development and knowledge sharing"
+    }
+  ],
+  "charity": [
+    {
+      "organization": "Mobility for All Foundation",
+      "role": "Volunteer Physiotherapist",
+      "description": "Providing free physical therapy services to underprivileged communities"
+    }
+  ],
+  "thoughts": [
+    {
+      "title": "The Future of Physical Therapy",
+      "content": "Exploring how technology and traditional techniques can work together",
+      "date": "2024-01-20"
+    }
+  ]
+}
