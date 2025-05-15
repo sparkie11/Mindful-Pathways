@@ -56,12 +56,21 @@ const Contact = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 } }}>
-      <Box sx={{ my: { xs: 2, md: 4 }, textAlign: 'center' }}>
-        <Typography variant="h4" component="h1" gutterBottom align="center">
+    <Container maxWidth="sm" sx={{ py: { xs: 4, md: 8 }, bgcolor: '#f5fdfb', borderRadius: 3, boxShadow: '0 4px 15px rgba(0, 109, 101, 0.1)' }}>
+      <Box sx={{ my: 3, textAlign: 'center' }}>
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom
+          sx={{ fontWeight: '700', color: '#00796b' }}
+        >
           Contact Me
         </Typography>
-        <Typography variant="body1" paragraph align="center">
+        <Typography
+          variant="body1"
+          paragraph
+          sx={{ color: '#004d40', fontSize: { xs: '1rem', md: '1.1rem' } }}
+        >
           Feel free to reach out for consultations or inquiries
         </Typography>
 
@@ -74,6 +83,23 @@ const Contact = () => {
             onChange={handleChange}
             required
             margin="normal"
+            variant="outlined"
+            sx={{
+              bgcolor: 'white',
+              borderRadius: 1,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+              '& .MuiOutlinedInput-root': {
+                transition: 'box-shadow 0.3s ease',
+                '&:hover fieldset': {
+                  boxShadow: '0 0 8px #00796b',
+                  borderColor: '#00796b',
+                },
+                '&.Mui-focused fieldset': {
+                  boxShadow: '0 0 12px #004d40',
+                  borderColor: '#004d40',
+                },
+              },
+            }}
           />
           <TextField
             fullWidth
@@ -84,6 +110,23 @@ const Contact = () => {
             onChange={handleChange}
             required
             margin="normal"
+            variant="outlined"
+            sx={{
+              bgcolor: 'white',
+              borderRadius: 1,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+              '& .MuiOutlinedInput-root': {
+                transition: 'box-shadow 0.3s ease',
+                '&:hover fieldset': {
+                  boxShadow: '0 0 8px #00796b',
+                  borderColor: '#00796b',
+                },
+                '&.Mui-focused fieldset': {
+                  boxShadow: '0 0 12px #004d40',
+                  borderColor: '#004d40',
+                },
+              },
+            }}
           />
           <TextField
             fullWidth
@@ -95,14 +138,40 @@ const Contact = () => {
             onChange={handleChange}
             required
             margin="normal"
+            variant="outlined"
+            sx={{
+              bgcolor: 'white',
+              borderRadius: 1,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+              '& .MuiOutlinedInput-root': {
+                transition: 'box-shadow 0.3s ease',
+                '&:hover fieldset': {
+                  boxShadow: '0 0 8px #00796b',
+                  borderColor: '#00796b',
+                },
+                '&.Mui-focused fieldset': {
+                  boxShadow: '0 0 12px #004d40',
+                  borderColor: '#004d40',
+                },
+              },
+            }}
           />
           <Button
             type="submit"
             variant="contained"
-            color="primary"
             size="large"
-            sx={{ mt: 3 }}
             fullWidth
+            sx={{
+              mt: 3,
+              bgcolor: '#00796b',
+              fontWeight: '600',
+              boxShadow: '0 4px 12px rgba(0, 121, 107, 0.4)',
+              transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
+              '&:hover': {
+                bgcolor: '#004d40',
+                boxShadow: '0 6px 18px rgba(0, 77, 64, 0.6)',
+              },
+            }}
           >
             Send Message
           </Button>
@@ -112,6 +181,7 @@ const Contact = () => {
           open={snackbar.open}
           autoHideDuration={6000}
           onClose={handleCloseSnackbar}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         >
           <Alert
             onClose={handleCloseSnackbar}

@@ -1,5 +1,21 @@
 import { useState, useEffect } from 'react';
-import { Container, Typography, Grid, Card, CardContent, CardActions, Button, TextField, Dialog, DialogTitle, DialogContent, DialogActions, Box, Fade, Zoom } from '@mui/material';
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+  TextField,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Box,
+  Fade,
+  Zoom,
+} from '@mui/material';
 import { motion } from 'framer-motion';
 import blogsData from '../data/blogs.json';
 
@@ -9,7 +25,7 @@ const Blogs = () => {
   const [newBlog, setNewBlog] = useState({
     title: '',
     content: '',
-    author: ''
+    author: '',
   });
 
   useEffect(() => {
@@ -27,9 +43,9 @@ const Blogs = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setNewBlog(prevState => ({
+    setNewBlog((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -37,130 +53,155 @@ const Blogs = () => {
     const newBlogPost = {
       id: blogs.length + 1,
       ...newBlog,
-      date: new Date().toISOString().split('T')[0]
+      date: new Date().toISOString().split('T')[0],
     };
-
-    setBlogs(prevBlogs => [...prevBlogs, newBlogPost]);
+    setBlogs((prevBlogs) => [...prevBlogs, newBlogPost]);
     handleClose();
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 5 }, height:"100vh" }}>
-      
-      <Fade in timeout={1000}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, my: { xs: 2, md: 4 } }}>
-          <img
-            src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"
-            alt="Blog Profile"
-            style={{ width: '60px', height: '60px', borderRadius: '50%' }}
-          />
-          <Typography variant="h4" component="h1" gutterBottom sx={{
-            background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            mb: 0
-          }}>
-            Physiotherapy Blog
-          </Typography>
-        </Box>
-      </Fade>
-      
-      {/* <Button
-        variant="contained"
-        color="primary"
-        onClick={handleClickOpen}
-        sx={{ mb: 4 }}
-      >
-        Add New Blog Post
-      </Button> */}
+    <Box
+      sx={{
+        minHeight: '100vh',
+        py: { xs: 4, md: 6 },
+        background: 'linear-gradient(to bottom right, #e3f2fd, #e1f5fe)',
+      }}
+    >
+      <Container maxWidth="lg">
+        {/* Header */}
+        <Fade in timeout={1000}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2,
+              mb: { xs: 3, md: 5 },
+            }}
+          >
+            <img
+              src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"
+              alt="Blog Profile"
+              style={{ width: '60px', height: '60px', borderRadius: '50%' }}
+            />
+            <Typography
+              variant="h4"
+              sx={{
+                background: 'linear-gradient(to right, #1976d2, #00bcd4)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                fontWeight: 700,
+              }}
+            >
+              Physiotherapy Blog
+            </Typography>
+          </Box>
+        </Fade>
 
-      <Grid container spacing={4}>
-        {blogs?.map((blog,index) => (
-          <Grid item xs={12} md={6} key={blog.id}>
-            <Zoom in style={{ transitionDelay: `${index * 150}ms` }}>
-              <Card sx={{
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                transition: 'transform 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)'
-                },
-                background: 'linear-gradient(to right bottom, #ffffff, #f5f5f5)'
-              }}>
-                <CardContent sx={{ flex: 1 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <img
-                      src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"
-                      alt="Blog Post"
-                      style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '12px' }}
-                    />
+        {/* Blog Cards */}
+        <Grid container spacing={4}>
+          {blogs?.map((blog, index) => (
+            <Grid item xs={12} md={6} key={blog.id}>
+              <Zoom in style={{ transitionDelay: `${index * 100}ms` }}>
+                <Card
+                  elevation={4}
+                  sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'all 0.4s ease',
+                    borderRadius: 3,
+                    background: 'linear-gradient(145deg, #ffffff, #f2f2f2)',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.15)',
+                    },
+                  }}
+                >
+                  <CardContent sx={{ flex: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                      <img
+                        src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"
+                        alt="Blog Post"
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '50%',
+                          marginRight: '12px',
+                        }}
+                      />
+                      <Typography variant="subtitle2" color="text.secondary">
+                        {blog.date} — {blog.author}
+                      </Typography>
                     </Box>
-                <Typography variant="h5" component="h2" gutterBottom>
-                  {blog.title}
-                </Typography>
-                <Typography color="text.secondary" gutterBottom>
-                  {blog.date} - {blog.author}
-                </Typography>
-                <Typography variant="body1" paragraph>
-                  {blog.content}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Read More
-                </Button>
-              </CardActions>
-            </Card>
-            </Zoom>
-          </Grid>
-        ))}
-      </Grid>
+                    <Typography variant="h6" gutterBottom fontWeight={600}>
+                      {blog.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {blog.content.length > 180
+                        ? `${blog.content.substring(0, 180)}...`
+                        : blog.content}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Read More
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Zoom>
+            </Grid>
+          ))}
+        </Grid>
 
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Add New Blog Post</DialogTitle>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            name="title"
-            label="Title"
-            type="text"
-            fullWidth
-            variant="outlined"
-            value={newBlog.title}
-            onChange={handleChange}
-          />
-          <TextField
-            margin="dense"
-            name="author"
-            label="Author"
-            type="text"
-            fullWidth
-            variant="outlined"
-            value={newBlog.author}
-            onChange={handleChange}
-          />
-          <TextField
-            margin="dense"
-            name="content"
-            label="Content"
-            type="text"
-            fullWidth
-            variant="outlined"
-            multiline
-            rows={4}
-            value={newBlog.content}
-            onChange={handleChange}
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Post</Button>
-        </DialogActions>
-      </Dialog>
-    </Container>
+        {/* Add Blog Dialog */}
+        <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
+          <DialogTitle sx={{ fontWeight: 'bold', color: '#1976d2' }}>
+            Add New Blog Post
+          </DialogTitle>
+          <DialogContent dividers>
+            <TextField
+              margin="dense"
+              name="title"
+              label="Title"
+              fullWidth
+              variant="outlined"
+              value={newBlog.title}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="dense"
+              name="author"
+              label="Author"
+              fullWidth
+              variant="outlined"
+              value={newBlog.author}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="dense"
+              name="content"
+              label="Content"
+              fullWidth
+              multiline
+              rows={5}
+              variant="outlined"
+              value={newBlog.content}
+              onChange={handleChange}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="secondary">
+              Cancel
+            </Button>
+            <Button onClick={handleSubmit} variant="contained" color="primary">
+              Post
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </Container>
+    </Box>
   );
 };
 
