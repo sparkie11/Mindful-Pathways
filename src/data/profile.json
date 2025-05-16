@@ -1,17 +1,71 @@
 {
   "education": [
     {
-      "degree": "Doctor of Physical Therapy",
-      "institution": "University of Health Sciences",
-      "year": "2018",
-      "description": "Specialized in orthopedic and sports rehabilitation"
-    }
+      "degree": "School",
+      "institution": "Rosemary matriculation school",
+      "year": "2014",
+      "description": "Specialized in Business and commerce"
+    },{
+      "degree": "Bachelor of Arts -BA, Economics",
+      "institution": "Stella Maris College",
+      "year": "2017",
+      "description": "Focused on my elective paper Psychology"
+
+      },{
+          "degree": "Post graduate, counselling and Psychotheraphy",
+          "institution": "University of Madras",
+          "year": "2018",
+          "description": "Focused on Counselling Psychotheraphy"
+    
+          },{
+            "degree": "Master of Science -MSc, Psychology",
+            "institution": "Sampurna Montfort College",
+            "year": "2020",
+            "description": "Focused on individual Counselling , group therapy , adolescent therapy , mental health counselling "
+      
+            },{
+              "degree": "Masters - Counselling Psychology",
+              "institution": "Sampurna Montfort College",
+              "year": "2026",
+              "description": "Still learning "
+        
+            }
   ],
   "accolades": [
     {
-      "title": "Excellence in Physical Therapy Award",
+      "title": "Prevention of Suicide: Gatekeeper Training",
+      "year": "2022",
+      "issuer": "Blue Nile Counselling"
+    },
+    {
+      "title": "Certified Queer Affirmative Therapist",
+      "year": "2022",
+      "issuer": "Mariwala Health Initiative"
+    },
+    {
+      "title": "Positive Intelligence by Shirzad Chamine ",
+      "year": "2022",
+      "issuer": "Positive Intelligence"
+    },
+    {
+      "title": "Fundamentals of Music Therapy by Purva Sampath",
       "year": "2020",
-      "issuer": "National Physical Therapy Association"
+      "issuer": "Muktha Foundation"
+    },
+    {
+      "title": "Foundational Course on Storytelling Skills by Sowmya Srinivasan",
+      "year": "2020",
+      "issuer": "Muktha Foundation"
+    },
+    {
+      "title": "Introduction to Theatre of the Oppressed by Cini Padmanabhan ",
+      "year": "2019",
+      "issuer": "Muktha Foundation"
+    },
+    {
+      "title": "3 Months Certificate Course on Learning Disabilities ",
+      "year": "2017",
+      "issuer": "Sankalp Open School"
     }
   ],
   "hobbies": [
@@ -26,9 +80,9 @@
   ],
   "achievements": [
     {
-      "title": "Published Research Paper",
-      "description": "Innovation in Sports Rehabilitation Techniques",
-      "year": "2021"
+      "title": "Best Guide Award",
+      "description": " Rosary Guide Company",
+      "year": "2013"
     }
   ],
   "communities": [
@@ -40,9 +94,9 @@
   ],
   "charity": [
     {
-      "organization": "Mobility for All Foundation",
+      "organization": "Prema vasam",
       "role": "Volunteer Physiotherapist",
-      "description": "Providing free physical therapy services to underprivileged communities"
+      "description": "In House Volunteer at Prema Vasam - Home for children with physical disabilities, children with mental disabilities and less fortunate children. Lived there with the kids for 5 months as a caretaker and teacher."
     }
   ],
   "thoughts": [

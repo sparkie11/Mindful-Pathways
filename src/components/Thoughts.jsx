@@ -71,11 +71,11 @@ const Thoughts = () => {
         </Grid>
       </Box>
 
-      <Box sx={{ mt: { xs: 3, md: 5 }, py: 2, textAlign: 'center', borderTop: '1px solid #e0e0e0' }}>
+      {/* <Box sx={{ mt: { xs: 3, md: 5 }, py: 2, textAlign: 'center', borderTop: '1px solid #e0e0e0' }}>
         <Typography variant="body2" color="text.secondary">
           &copy; {new Date().getFullYear()} Physiotherapy Practice. Maintained by gautamwise.com
         </Typography>
-      </Box>
+      </Box> */}
     </Container>
   );
 };

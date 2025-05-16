@@ -11,7 +11,7 @@ const Communities = () => {
 
   return (
     // <Container maxWidth="lg" sx={{ py: { xs: 3, md: 5 } }}>
-    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 5 }, height:"100vh" }}>
+    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 5 }, height:"80vh" }}>
 
       <Box sx={{ my: { xs: 2, md: 4 } }}>
         <Typography variant="h4" component="h1" gutterBottom>
@@ -42,11 +42,11 @@ const Communities = () => {
         </Grid>
       </Box>
 
-      <Box sx={{ mt: 4, textAlign: 'center' }}>
+      {/* <Box sx={{ mt: 4, textAlign: 'center' }}>
         <Typography variant="body2" color="text.secondary">
           Maintained by gautamwise.com
         </Typography>
-      </Box>
+      </Box> */}
     </Container>
   );
 };

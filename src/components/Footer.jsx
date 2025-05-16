@@ -7,7 +7,7 @@ const Footer = () => {
 
       <Container maxWidth="lg">
         <Typography variant="body2" color="text.secondary" align="center">
-          © {new Date().getFullYear()} Physiotherapist Portfolio. All rights reserved.
+          © {new Date().getFullYear()} Lavanya Portfolio. All rights reserved.
         </Typography>
         <Typography variant="body2" color="text.secondary" align="center">
           Maintained by{' '}

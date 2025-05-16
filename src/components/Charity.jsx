@@ -18,7 +18,7 @@ const Charity = () => {
         <Fade in timeout={1000}>
           <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row'}, alignItems: 'center', gap: 2, mb: { xs: 3, md: 4 }, textAlign: { xs: 'center', sm: 'left'} }}>
             <img
-              src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75" // Consider a specific icon for charity
+              src="/assets/lavanya.jpeg" // Consider a specific icon for charity
               alt="Charity Initiatives"
               style={{ width: '60px', height: '60px', borderRadius: '50%', marginBottom: { xs: '16px', sm: '0px' } }}
             />
@@ -54,7 +54,7 @@ const Charity = () => {
                   <CardContent sx={{ p: { xs: 2, md: 3 } }}>
                     <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                       <img
-                        src={work.icon || "https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"} // Use dynamic icon if available
+                        src={work.icon || "/assets/lavanya.jpeg"} // Use dynamic icon if available
                         alt={work.organization || 'Charity Icon'}
                         style={{ width: '48px', height: '48px', borderRadius: '8px', marginRight: '16px', objectFit: 'cover', flexShrink: 0 }}
                       />
@@ -78,11 +78,11 @@ const Charity = () => {
         </Grid>
       </Box>
 
-      <Box sx={{ mt: { xs: 3, md: 5 }, py: 2, textAlign: 'center', borderTop: '1px solid #e0e0e0' }}>
+      {/* <Box sx={{ mt: { xs: 3, md: 5 }, py: 2, textAlign: 'center', borderTop: '1px solid #e0e0e0' }}>
         <Typography variant="body2" color="text.secondary">
           &copy; {new Date().getFullYear()} Physiotherapy Practice. Maintained by gautamwise.com
         </Typography>
-      </Box>
+      </Box> */}
     </Container>
   );
 };

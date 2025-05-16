@@ -19,7 +19,7 @@ const Home = () => {
           <Box sx={{ flex: 1, textAlign: 'center', order: { xs: 2, md: 1 } }}>
             <Box
               component="img"
-              src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"
+              src="/assets/lavanya.jpeg"
               alt="Professional Physiotherapist"
               sx={{
                 width: '100%',
@@ -76,7 +76,7 @@ const Home = () => {
             }}>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                 <img
-                  src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75" // Consider a specific icon for achievements
+                  src="/assets/lavanya.jpeg" // Consider a specific icon for achievements
                   alt="Latest Achievement"
                   style={{ width: '48px', height: '48px', borderRadius: '8px', marginRight: '16px', objectFit: 'cover' }}
                 />

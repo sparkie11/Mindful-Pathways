@@ -47,7 +47,7 @@ const Education = () => {
                 <CardContent>
                   <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                     <img
-                      src={edu.icon || "https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"} 
+                      src={edu.icon || "/assets/lavanya.jpeg"} 
                       alt={edu.institution || 'Education Icon'}
                       style={{ width: '48px', height: '48px', borderRadius: '8px', marginRight: '16px', objectFit: 'cover', flexShrink: 0 }}
                     />
@@ -89,7 +89,7 @@ const Education = () => {
                 <CardContent>
                   <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                     <img
-                      src={accolade.icon || "https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"} 
+                      src={accolade.icon || "/assets/lavanya.jpeg"} 
                       alt={accolade.title || 'Accolade Icon'}
                       style={{ width: '48px', height: '48px', borderRadius: '8px', marginRight: '16px', objectFit: 'cover', flexShrink: 0 }}
                     />
@@ -112,11 +112,11 @@ const Education = () => {
         </Grid>
     </Grid>
 
-      <Divider sx={{ my: 4 }} />
+      {/* <Divider sx={{ my: 4 }} />
       
       <Typography variant="body2" color="text.secondary" align="center">
         Maintained by gautamwise.com
-      </Typography>
+      </Typography> */}
     </Container>
   );
 };

@@ -50,7 +50,7 @@ const Blogs = () => {
       <Fade in timeout={1000}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, my: { xs: 2, md: 4 } }}>
           <img
-            src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"
+            src='/assets/lavanya.jpeg'
             alt="Blog Profile"
             style={{ width: '60px', height: '60px', borderRadius: '50%' }}
           />
@@ -92,7 +92,7 @@ const Blogs = () => {
                 <CardContent sx={{ flex: 1 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                     <img
-                      src="https://gautamwise.com/_next/image?url=%2Fimages%2Fprofile.jpeg&w=256&q=75"
+                      src="/assets/lavanya.jpeg"
                       alt="Blog Post"
                       style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '12px' }}
                     />
