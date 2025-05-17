@@ -1,128 +1,77 @@
-import { useState } from 'react';
-import { Box, Typography, TextField, Button, Container, Alert, Snackbar } from '@mui/material';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
+import { useMessages } from './MessageContext';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    message: '',
-    severity: 'success'
-  });
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const { addMessage } = useMessages();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message
-        },
-        'YOUR_PUBLIC_KEY'
-      );
 
-      setSnackbar({
-        open: true,
-        message: 'Message sent successfully!',
-        severity: 'success'
-      });
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setSnackbar({
-        open: true,
-        message: 'Failed to send message. Please try again.',
-        severity: 'error'
-      });
+    if (!form.name || !form.email || !form.message) {
+      alert('Please fill in all fields.');
+      return;
     }
-  };
 
-  const handleCloseSnackbar = () => {
-    setSnackbar(prevState => ({ ...prevState, open: false }));
+    addMessage({ ...form, date: new Date().toLocaleString() });
+
+    setSubmitted(true);
+    setForm({ name: '', email: '', message: '' });
+
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 } }}>
-      <Box sx={{ my: { xs: 2, md: 4 }, textAlign: 'center' }}>
-        <Typography variant="h4" component="h1" gutterBottom align="center">
-          Contact Me
-        </Typography>
-        <Typography variant="body1" paragraph align="center">
-          Feel free to reach out for consultations or inquiries
-        </Typography>
+    <section className="bg-white py-20 px-6 text-center" id="contact">
+      <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
+      <p className="text-gray-600 max-w-lg mx-auto mb-8">
+        Fill in your details and our team will get back to you soon.
+      </p>
 
-        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 4 }}>
-          <TextField
-            fullWidth
-            label="Name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            margin="normal"
-          />
-          <TextField
-            fullWidth
-            label="Email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            margin="normal"
-          />
-          <TextField
-            fullWidth
-            label="Message"
-            name="message"
-            multiline
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            required
-            margin="normal"
-          />
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{ mt: 3 }}
-            fullWidth
-          >
-            Send Message
-          </Button>
-        </Box>
-
-        <Snackbar
-          open={snackbar.open}
-          autoHideDuration={6000}
-          onClose={handleCloseSnackbar}
+      <form onSubmit={handleSubmit} className="max-w-xl mx-auto grid gap-4">
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Your Name"
+          className="border rounded-md px-4 py-3"
+        />
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Your Email"
+          className="border rounded-md px-4 py-3"
+        />
+        <textarea
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Your Message"
+          className="border rounded-md px-4 py-3"
+          rows={5}
+        ></textarea>
+        <button
+          type="submit"
+          className="bg-black text-white py-3 rounded-md text-lg hover:bg-gray-800 transition"
         >
-          <Alert
-            onClose={handleCloseSnackbar}
-            severity={snackbar.severity}
-            sx={{ width: '100%' }}
-          >
-            {snackbar.message}
-          </Alert>
-        </Snackbar>
-      </Box>
-    </Container>
+          Send Message
+        </button>
+      </form>
+
+      {submitted && (
+        <div className="mt-6 text-green-600 font-medium">
+          ✅ Your message has been sent!
+        </div>
+      )}
+    </section>
   );
 };
 
