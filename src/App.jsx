@@ -1,53 +1,32 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createTheme, CssBaseline, Container } from '@mui/material';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Blogs from './components/Blogs';
-import Contact from './components/Contact';
-import Education from './components/Education';
-import Achievements from './components/Achievements';
-import Communities from './components/Communities';
-import Charity from './components/Charity';
-import Thoughts from './components/Thoughts';
-import Footer from './components/Footer';
+import React from 'react'
+import Header from './components/Header.jsx'
+import Hero from './components/Hero.jsx'
+import Services from './components/Services.jsx'
+import About from './components/About.jsx'
+import Team from './components/Team.jsx'
+import Blog from './components/Blog.jsx'
+import Testimonials from './components/Testimonials.jsx'
+import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
+import Messages from './pages/Messages.jsx'
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      // main: '#2196f3',
-      main: '#c3bfd9',
-
-    },
-    secondary: {
-      // main: '#f50057',
-      main: '#f9f8f6',
-
-    },
-  },
-});
-
-function App() {
+const App = () => {
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Navbar />
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/achievements" element={<Achievements />} />
-            <Route path="/communities" element={<Communities />} />
-            <Route path="/charity" element={<Charity />} />
-            <Route path="/thoughts" element={<Thoughts />} />
-          </Routes>
-        </Container>
-        <Footer />
-      </ThemeProvider>
-    </Router>
-  );
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Team />
+        <Blog />
+        <Testimonials />
+        <Contact />
+        <Messages/>
+      </main>
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
